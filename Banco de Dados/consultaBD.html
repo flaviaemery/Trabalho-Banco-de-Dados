@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>UFMG</b> - Trabalho Banco de dados</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#projects" class="w3-bar-item w3-button">Consultas BD</a>
+      <a href="#about" class="w3-bar-item w3-button">Sobre</a>
+      <a href="#diagramas" class="w3-bar-item w3-button">Diagramas</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>UFMG</b></span> <span class="w3-hide-small w3-text-light-grey">Trabalho Banco de dados</span></h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">consultas BD</h3>
+  </div>
+
+  <div class="w3-row-padding">
+
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <form name="Apresentação-BD" action="AlbumArtistaAno.php" method="POST">
+          <input type="submit" name="Apresentação-BD" value="Apresentação do BD musica">
+        </form>
+      </div>
+    </div>
+
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <form name="Artista-Album-Ano" action="ArtistaAlbum.php" method="POST">
+          <input type="submit" name="Artista-Album-Ano" value="Artista(ordenação)/Album(Alias)/Ano(Alias)">
+      </form>
+  </div>
+
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <form name="Artista-Album-1990-2001" action="ArtistaAlbum1990_2001.php" method="POST">
+          <input type="submit" name="Artista-Album-1990-2001" value="Artista/Album entre 1990 e 2001">
+      </form>
+  </div>
+
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <form name="Album-Genero" action="AlbumGenre.php" method="POST">
+          <input type="submit" name="Album-Genero" value="Album e Gênero musical">
+      </form>
+    </div>
+  </div>
+
+  <div class="w3-row-padding">
+
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <form name="Album-Genero-Rock" action="AlbumGenreRock.php" method="POST">
+          <input type="submit" name="Album-Genero-Rock" value="Album e Gênero Rock">
+      </form>
+    </div>
+
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <form name="Album-Genero-Subgenero" action="AlbumGenreSubgenre.php" method="POST">
+          <input type="submit" name="Album-Genero-Subgenero" value="Album/Gênero/Subgênero(UNION)">
+      </form>
+    </div>
+
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <form name="Album-subgenero" action="AlbumSubgenre.php" method="POST">
+          <input type="submit" name="Album-subgenero" value="Album/Subgênero">
+      </form>
+    </div>
+
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <form name="Artista-Album-Ano < 1960" action="Having1960.php" method="POST">
+          <input type="submit" name="Artista-Album-Ano < 1960" value="Artista/Album/Ano < 1960">
+      </form>
+    </div>
+
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Sobre</h3>
+    <p>A ideia incial do trabalho, foi a criação de uma biblioteca virtual, onde, os livros seriam separados por gênero literário e leitura técnica, porém, a dificuldade em encontrar arquivos csv disponíveis para a execução do trabalho, fez com que houvesse uma mudança para arquivos de música, definindo artista/banda com álbum, ano de lançamento do álbum, gênero musical e subgênero musical.</p>
+    <p>A coleta de dados para exibição de um relatório, foi feita através da conexão do bnco de dados em um arquivo php.</p>
+    <p>A página em HTML foi retirada de um modelo do <a href="https://www.w3schools.com/">W3schools.com</a> e sofreu as modificações para o trabalho.</p>
+    <p>A página <a href="https://data.world/arcadeanalytics/best-500-albums-amazon-neptune"><b>Referência</b></a> foi um arquivo csv do GitHubGist do Jaidevd/boos.csv. O arquivo foi importado para o Banco de dados através do phpmyadmin.</p>
+    <div class="w3-container w3-padding-32" id="about">
+      <p><li>O primeiro FORM apresentado para a busca no banco de dados (Apresentação do BD musica), mostra dados através de:</li></p>
+      <p>SELECT label_al, title, year, to_ed, label_ed FROM Albums A INNER JOIN Edges E WHERE A.id_al=E.from_ed;.</p>
+      <p><li>O segundo FORM apresentado para a busca no banco de dados (Album e Gênero Rock), mostra dados através de:</li></p>
+      <p>SELECT title, name_gen FROM Albums Al INNER JOIN Edges E ON (Al.id_al = E.from_ed) INNER JOIN Genre Ge ON (Ge.id_gen = E.to_ed) WHERE name_gen LIKE '%Rock%';.</p>
+      <p><li>O terceiro FORM apresentado para a busca no banco de dados (Artista(ordenação)/Album(Alias)/Ano(Alias)), mostra dados através de:</li></p>
+      <p>SELECT name_ar AS Artista,  title AS Album, year AS Ano FROM Artist Ar INNER JOIN Edges E ON (Ar.id_ar = E.to_ed) INNER JOIN Albums Al ON (Al.id_al = E.from_ed) ORDER BY name_ar;.</p>
+      <p><li>O quarto FORM apresentado para a busca no banco de dados (Album/Gênero/Subgênero(UNION)), mostra dados através de:</li></p>
+      <p>SELECT title, name_gen FROM Albums Al INNER JOIN Edges E ON (Al.id_al = E.from_ed) INNER JOIN Genre Ge ON (Ge.id_gen = E.to_ed) UNION SELECT title, name_sub FROM Albums Al INNER JOIN Edges E ON (Al.id_al = E.from_ed) INNER JOIN Subgenre Sub ON (Sub.id_sub = E.to_ed);.</p>
+      <p><li>O quinto FORM apresentado para a busca no banco de dados (Artista/Album entre 1990 e 2001), mostra dados através de:</li></p>
+      <p>SELECT name_ar,  title, year FROM Artist Ar INNER JOIN Edges E ON (Ar.id_ar = E.to_ed) INNER JOIN Albums Al ON (Al.id_al = E.from_ed) WHERE year >= '1990' AND year <=  '2001' ORDER BY year desc;.</p>
+      <p><li>O sexto FORM apresentado para a busca no banco de dados (Album/Subgênero), mostra dados através de:</li></p>
+      <p>SELECT title, name_sub FROM Albums Al INNER JOIN Edges E ON (Al.id_al = E.from_ed) INNER JOIN Subgenre Sub ON (Sub.id_sub = E.to_ed);.</p>
+      <p><li>O sétimo FORM apresentado para a busca no banco de dados (Album e Gênero musical), mostra dados através de:</li></p>
+      <p>SELECT title, name_gen FROM Albums Al INNER JOIN Edges E ON (Al.id_al = E.from_ed) INNER JOIN Genre Ge ON (Ge.id_gen = E.to_ed);.</p>
+      <p><li>O oitavo FORM apresentado para a busca no banco de dados (Artista-Album-Ano < 1960), mostra dados através de:</li></p>
+      <p>SELECT name_ar AS Artista,  title AS Album, year AS Ano FROM Artist Ar INNER JOIN Edges E ON (Ar.id_ar = E.to_ed) INNER JOIN Albums Al ON (Al.id_al = E.from_ed) HAVING year <= '1960' ORDER BY year desc;.</p>
+    </div>
+  </div>
+
+  <div class="w3-container w3-padding-32" id="diagramas">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Diagramas</h3>
+    <div class="w3-row-padding w3-grayscale">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <img src="img/musica.jpeg" alt="John" style="width:200%" align="w3-center">
+        <h3>Diagrama ER</h3>
+        <p class="w3-opacity">Modelo de representação</p>
+        <p>Esse é o modelo que melhor pareceu representar o banco de dados adquirido.</p>
+    </div>
+  
+<!-- Image of location/map -->
+<div class="w3-container">
+  <img src="img/Diagrama2.jpeg" class="w3-image" style="width:100%">
+</div>
+
+ <div class="w3-col l3 m6 w3-margin-bottom">
+        <h3>Modelo Relacional</h3>
+        <p class="w3-opacity">Modelo de representação</p>
+        <p><b>Edges</b> (id_ed, from_ed, to_ed, label_ed)<Br/>
+<b>Artist</b> (id_ar, lable_ar, name_ar)<Br/>
+&nbsp;&nbsp;&nbsp;id_ar REFERENCIA Edges<Br/>
+<b>Albums</b> (id_al, label_al, title, year, number)<Br/>
+&nbsp;&nbsp;&nbsp;id_al REFERENCIA Edges<Br/>
+<b>Year</b> (id_y, label_y, name_y)<Br/>
+&nbsp;&nbsp;&nbsp;id_y REFERENCIA Edges<Br/>
+<b>Genre</b> (id_gen, label_gen, name_gen)<Br/>
+&nbsp;&nbsp;&nbsp;id_gen REFERENCIA Edges<Br/>
+<b>Subgenre</b> (id_sub, label_sub, name_sub)<Br/>
+&nbsp;&nbsp;&nbsp;id_sub REFERENCIA Edges</p>
+    </div>
+
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Flávia Emery Pereira Sudário - Matrícula 2017435893</a></p>
+</footer>
+
+</body>
+</html>
