@@ -1,0 +1,7 @@
+trabalho1.c
+
+Compilar: 
+gcc -Wall -Wextra -O3 -o trabalho1 trabalho1.c
+
+Rodar:
+./trabalho1 <arquivo.txt
