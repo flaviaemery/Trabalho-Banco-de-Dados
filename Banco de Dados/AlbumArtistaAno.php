@@ -36,7 +36,7 @@ echo "<th>label_ed</th>";
 echo "</tr>";
 
 // Conectando ao banco de dados;
-$strcon = mysqli_connect('localhost','admin','19741702', 'musica') or die('Erro ao conectar ao banco de dados');
+$strcon = mysqli_connect('localhost','admin','S6jTjS8Q', 'musica') or die('Erro ao conectar ao banco de dados');
 $sql = "SELECT * FROM Albums A INNER JOIN Edges E WHERE A.id_al = E.from_ed;";
 $resultado = mysqli_query($strcon,$sql) or die ("Erro ao tentar cadastrar registro");
 

@@ -32,7 +32,7 @@ echo "<th>name_gen</th>";
 echo "</tr>";
 
 // Conectando ao banco de dados;
-$strcon = mysqli_connect('localhost','admin','19741702', 'musica') or die('Erro ao conectar ao banco de dados');
+$strcon = mysqli_connect('localhost','admin','S6jTjS8Q', 'musica') or die('Erro ao conectar ao banco de dados');
 $sql = "SELECT title, name_gen FROM Albums Al INNER JOIN Edges E ON (Al.id_al = E.from_ed) INNER JOIN Genre Ge ON (Ge.id_gen = E.to_ed);";
 $resultado = mysqli_query($strcon,$sql) or die ("Erro ao tentar cadastrar registro");
 
